@@ -20,6 +20,12 @@ echo """
 if ! [ -n "$ARG1" ]; then
         echo "[MODO DE USO] ./B1C4.sh <url-alvo/ip-alvo> [--arquivos,--diretorios,--ajuda]"
         exit 0
+elif [ $ARG1 == '--ajuda' ]
+then
+        echo "./B1C4.sh <url-alvo/ip-alvo>
+        --arquivos    = Executa Apenas o Brute Force de Arquivos
+        --diretorios  = Executa Apenas o Brute Force de Diretórios
+        --ajuda       = Exibe o Menu de Ajuda"
 fi
 
 echo "[1] SCANNER/OSINT COMPLETO"
@@ -60,12 +66,6 @@ then
                 tudo=false
                 soDiretorios=true
                 soArquivos=false
-        elif [ $ARG2 == '--ajuda' ]
-        then
-                echo "./B1C4.sh <url-alvo/ip-alvo>
-                --arquivos    = Executa Apenas o Brute Force de Arquivos
-                --diretorios  = Executa Apenas o Brute Force de Diretórios
-                --ajuda       = Exibe o Menu de Ajuda"
         else
                 tudo=true
                 soDiretorios=true
