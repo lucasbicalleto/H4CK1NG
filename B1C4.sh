@@ -1,9 +1,11 @@
 #!/bin/bash
 
+# argumentos
 ARG1=$1
 ARG2=$2
 userAgent="User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36 B1C4-H4CK1NG/1.0.0"
 
+# validando
 echo """
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ░░██████╗░░░███╗░░░█████╗░░░██╗██╗░░░░░░░░
@@ -16,7 +18,7 @@ echo """
 
 # validando paramtros
 if ! [ -n "$ARG1" ]; then
-        echo "nenhum parametro informado, saindo"
+        echo "[MODO DE USO] ./B1C4.sh <url-alvo/ip-alvo> [--arquivos,--diretorios,--ajuda]"
         exit 0
 fi
 
@@ -58,6 +60,12 @@ then
                 tudo=false
                 soDiretorios=true
                 soArquivos=false
+        elif [ $ARG2 == '--ajuda' ]
+        then
+                echo "./B1C4.sh <url-alvo/ip-alvo>
+                --arquivos    = Executa Apenas o Brute Force de Arquivos
+                --diretorios  = Executa Apenas o Brute Force de Diretórios
+                --ajuda       = Exibe o Menu de Ajuda"
         else
                 tudo=true
                 soDiretorios=true
